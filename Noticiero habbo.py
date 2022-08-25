@@ -19,12 +19,12 @@ bot = commands.Bot(command_prefix='!', description="ayuda bot") #Comando
 bot.remove_command("help") # Borra el comando por defecto !help
 
 @bot.command()
-async def noticiero(ctx,   keko):
+async def noticiero(ctx,   keko, hotel):
     await ctx.message.delete()
     await ctx.send("Generando habbo Noticiero...", delete_after=0)
     time.sleep(3)
     
-    response = requests.get(f"https://www.habbo.es/api/public/users?name={keko}")
+    response = requests.get(f"https://www.habbo.{hotel}/api/public/users?name={keko}")
  
    
     
